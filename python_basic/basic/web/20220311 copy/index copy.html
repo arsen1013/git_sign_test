@@ -1,0 +1,97 @@
+<!--부트스트랩에서 탬플릿 다운받아서 
+    그 중 sign-in 템플릿의 index.html 열어서 그대로 복사 붙어넣기 -->
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Signin Template · Bootstrap v5.1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <!--부트스트랩 서버 css 링크 복사 붙여넣기 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <!--static/css 폴더 만들기-->
+    <!--css 폴더 안에 템플릿에서 다운받은 signin.css 폴더 복사 붙여넣기 하기-->
+    <link href="{{url_for('static', filename='css/signin.css')}}" rel="stylesheet">
+    <!--../static/css/signin.css 로 하면 일일이 되지만... 서버에서 열 것이기 때문에 이런 폴더 경로 지정은 까다로움. 따라서 파이선 코드 사용-->
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form>
+    <img class="mb-4" src="{{url_for('static', filename='img/bootstrap-logo.svg')}}" alt="" width="72" height="57">
+    <!-- usr_for static/img 가 아니라 filename img/bootstrap-logo.svg다  -->
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+
+    <!-- 고객정보를 입력하는 버튼을 입력하기-->
+    
+<!-- form에 있는 액션이랑 메소드를 적을 건데 그 액션이 있는 url에 접속해서 이  인풋에 있는 정보를 가지고 제출한다. -->
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <!-- 이 버튼을 누르면 폼 태그 안에 있는 어떤 액션이든 실행한다 -->
+    <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
+  </form>
+
+  <br> 
+  <!--원래는 br이 아니라 그냥 위에 태그에 마진을 준다..-->
+  
+  <!-- 회원가입 버튼을 만든다. 위의 sign in 이라는 행동과 다른 행동을 해야하는데, 문제는 form 안에 있는 태그로 묶인 이상 같은 행동을 할 수 밖에 없다. 그래서 form 태그 밖에 만들어야 한다.  -->
+  
+  
+  <a class="w-100 btn btn-lg btn-secondary" type="submit" href="/signup">회원 가입</a>
+  <!-- 이 버튼을 눌렀을때 어디로 가야할까? 어떤 url을 생성해야 할까? main.py로 이동해서 준다. 
+  burron 태그를 a 태그로 변경하고 herf를 주어 버튼 클릭시 main.py 에서 제작한 signup url로 이동하도록 링크를 준. -->
+
+
+
+</main>
+
+
+    
+  </body>
+</html>
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        index page......
+    </h1>
+    <a href="/second/">second page</a>
+    <!--로컬 호스트에 나오는 것과 똑같이 작성해주면 된다.-->
+    <!-- 내가 입력하는 값은 벨루에 들어감-->
+    <form action ="/second/" method="get"> 
+        <!--<form action ="내가 가고싶은 URL" method="get할지 post 할지 선택">-->
+        <!--ㅡmethod를 주지 않으면 기본값인 get의 형태가 된다. -->
+        <input type="text" name = "id">
+        <input tyee="password" name="pass"> <!--키값임-->
+        <input type="submit">
+    </form>
+    <h1>
+        url post
+    </h1>
+
+    <form action = "/third/" method="post">
+        <input type="text" name="id">
+        <input type ="password" name="pass">
+        <input type="submit">
+    </form>
+
+</body>
+</html>
+
